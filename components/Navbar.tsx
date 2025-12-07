@@ -27,8 +27,8 @@ export default function Navbar() {
         {/* Logo */}
         <div className="flex items-center flex-shrink-0">
           <Image
-            src="/images/logo.png"
-            alt="Bellagio Logo"
+            src="/images/new paradise banquet.png"
+            alt="new paradise banquet Logo"
             width={200}
             height={80}
             className="h-16 md:h-20 w-auto"
