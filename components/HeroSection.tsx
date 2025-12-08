@@ -48,7 +48,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-black/50"></div>
 
       {/* Content */}
-      <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-4 md:px-8">
+      <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-4 md:px-8 pt-8 md:pt-0">
         {/* Main Title with Animation */}
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-yellow-400 mb-6 animate-fadeInDown tracking-wider">
           PLAN YOUR EVENT!
@@ -68,7 +68,7 @@ export default function HeroSection() {
       </div>
 
       {/* Icons Section - Bottom of Hero */}
-      <div className="relative z-10 bg-black/40 backdrop-blur-sm border-t border-yellow-400/30 py-8 px-4">
+      <div className="relative z-10 py-8 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
             {icons.map((item, index) => (
