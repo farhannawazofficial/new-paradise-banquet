@@ -111,3 +111,32 @@ html {
   color: rgb(0, 0, 0);
 }
 
+/* WhatsApp floating button helpers */
+@keyframes whatsappPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+.whatsapp-float {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.18);
+  border: 2px solid rgba(255,255,255,0.06);
+  backdrop-filter: blur(6px);
+}
+
+.whatsapp-float i { /* icon color handled by text-white class but keep small tweak */
+  display: block;
+}
+
+@media (hover: hover) {
+  .whatsapp-float:hover {
+    animation: whatsappPulse 900ms ease-in-out;
+  }
+}
+
+/* slightly larger on desktop */
+@media (min-width: 768px) {
+  .whatsapp-float { bottom: 28px; right: 28px; }
+}
+
+
