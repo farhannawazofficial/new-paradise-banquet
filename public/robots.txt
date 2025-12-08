@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.newparadisebanquet.com/sitemap.xml
+# Host directive can be changed to your primary domain
+Host: https://www.newparadisebanquet.com

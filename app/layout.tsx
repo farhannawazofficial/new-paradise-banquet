@@ -16,8 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bellagio - Banquet and Conference Hall",
-  description: "Premier wedding and banquet venue for your special events",
+  title: "New Paradise Banquet - Premier wedding & event venue",
+  description:
+    "New Paradise Banquet - Premier wedding and event venue. Book halls, catering, photography and decor for unforgettable weddings and events.",
 };
 
 export default function RootLayout({
@@ -28,10 +29,44 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="New Paradise Banquet - Premier wedding and event venue. Book halls, catering, photography and decor for unforgettable weddings and events." />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.newparadisebanquet.com/" />
+        <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:title" content="New Paradise Banquet - Premier wedding & event venue" />
+        <meta property="og:description" content="Book halls, catering, photography and decor for unforgettable weddings and events at New Paradise Banquet." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.newparadisebanquet.com/" />
+        <meta property="og:image" content="/images/logo.png" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="New Paradise Banquet - Premier wedding & event venue" />
+        <meta name="twitter:description" content="Book halls, catering, photography and decor for unforgettable weddings and events at New Paradise Banquet." />
+        <meta name="twitter:image" content="/images/logo.png" />
+
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         />
+
+        {/* Structured data (LocalBusiness) - replace domain and add address as needed */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "New Paradise Banquet",
+          "telephone": "+923191113372",
+          "image": "/images/logo.png",
+          "url": "https://www.newparadisebanquet.com/",
+          "sameAs": [
+            "https://www.facebook.com/",
+            "https://www.instagram.com/"
+          ]
+        }) }} />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

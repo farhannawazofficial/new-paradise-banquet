@@ -17,7 +17,7 @@ export default function Footer() {
         <div className="flex flex-col items-center justify-center gap-6">
           {/* Logo image centered - replace with your saved logo in public/images */}
           <div className="relative w-48 h-20 md:w-56 md:h-24">
-            <Image src="/images/new paradise banquet.png" alt="New Paradise Logo" fill className="object-contain" priority />
+            <Image src="/images/logo.png" alt="New Paradise Banquet logo" fill className="object-contain" priority />
           </div>
 
           <div className="text-center">
@@ -42,8 +42,8 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 border-t border-white/6 pt-6 text-sm text-center text-white/70">
-          <div>Copyright-2024. All Right Reserved New Paradise Banquet.</div>
-          <div>Powered by <span className="font-semibold text-yellow-400">xanfartech.com</span></div>
+          <div>Copyright © 2025. All Rights Reserved New Paradise Banquet.</div>
+          <div>Powered by <span className="font-semibold text-yellow-400">Xanfar Tech</span></div>
         </div>
       </div>
     </footer>
