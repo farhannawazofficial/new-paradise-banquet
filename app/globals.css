@@ -155,5 +155,53 @@ html {
   .scroll-top-btn { width: 48px; height: 48px; }
 }
 
+/* Gallery styles */
+.gallery-scroll-container {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 12px 36px;
+  -webkit-overflow-scrolling: touch;
+}
+.gallery-item {
+  flex: 0 0 280px;
+  height: 180px;
+  background: #f3f3f3;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+@media (min-width: 768px) {
+  .gallery-item { flex: 0 0 320px; height: 220px; }
+}
+
+/* Hide default scrollbar for most browsers */
+.gallery-scroll-container::-webkit-scrollbar { height: 8px; }
+.gallery-scroll-container::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.12); border-radius: 8px; }
+.gallery-scroll-container { scrollbar-width: thin; scrollbar-color: rgba(0,0,0,0.12) transparent; }
+
+.gallery-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 40;
+  background: white;
+  color: #111827;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+  border: 1px solid rgba(0,0,0,0.04);
+  transition: transform .18s ease, background .18s ease;
+}
+.gallery-btn.left { left: 6px; }
+.gallery-btn.right { right: 6px; }
+.gallery-btn:hover { transform: translateY(-50%) scale(1.04); background: #fff7ed; color: #b45309; }
+
 
 
