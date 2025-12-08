@@ -1,11 +1,10 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#071018] text-white mt-12">
+    <footer id="contact" className="relative bg-[#071018] text-white mt-12">
       {/* Decorative top edge - thin accent */}
       <div className="w-full overflow-hidden leading-[0]">
         <svg viewBox="0 0 1200 24" preserveAspectRatio="none" className="w-full h-6 text-white/5" xmlns="http://www.w3.org/2000/svg">
@@ -33,7 +32,7 @@ export default function Footer() {
         <div className="flex flex-col items-center justify-center gap-6">
           {/* Logo image centered - replace with your saved logo in public/images */}
           <div className="relative w-48 h-20 md:w-56 md:h-24 animate-fadeIn">
-            <Image src="/images/new paradise banquet.png" alt="New Paradise Banquet logo" fill className="object-contain" priority />
+            <img src="/images/logo.png" alt="New Paradise Banquet logo" className="object-contain w-full h-full" />
           </div>
 
           <div className="text-center">

@@ -28,7 +28,7 @@ export default function HeroSection() {
     ];
 
     return (
-        <section className="relative w-full min-h-screen overflow-hidden flex flex-col">
+        <section id="hero" className="relative w-full min-h-screen overflow-hidden flex flex-col">
             {/* Video Background */}
             <video
                 autoPlay
