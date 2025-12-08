@@ -14,9 +14,25 @@ export default function Footer() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 py-10 md:py-14">
+        {/* Map container - visible on mobile at top, animated */}
+        <div className="w-full mb-8 md:hidden">
+          <div className="relative w-full h-48 sm:h-56 overflow-hidden rounded-lg shadow-lg animate-fadeInUp">
+            <iframe
+              title="New Paradise Banquet location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.2194875916935!2d66.96933179999999!3d24.9245917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb315004869d05b%3A0x578e0fe01af47a73!2sNew%20Paradise%20Banquet!5e0!3m2!1sen!2s!4v1765177554892!5m2!1sen!2s"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+
         <div className="flex flex-col items-center justify-center gap-6">
           {/* Logo image centered - replace with your saved logo in public/images */}
-          <div className="relative w-48 h-20 md:w-56 md:h-24">
+          <div className="relative w-48 h-20 md:w-56 md:h-24 animate-fadeIn">
             <Image src="/images/new paradise banquet.png" alt="New Paradise Banquet logo" fill className="object-contain" priority />
           </div>
 
@@ -47,8 +63,8 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Small map in the footer corner - hidden on very small screens */}
-        <div className="absolute right-6 top-6 w-52 h-36 overflow-hidden rounded-md shadow-lg hidden sm:block">
+        {/* Small map in the footer corner - visible on desktop only */}
+        <div className="absolute right-6 top-20 w-60 h-48 overflow-hidden rounded-lg shadow-lg hidden md:block animate-fadeIn">
           <iframe
             title="New Paradise Banquet location"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.2194875916935!2d66.96933179999999!3d24.9245917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb315004869d05b%3A0x578e0fe01af47a73!2sNew%20Paradise%20Banquet!5e0!3m2!1sen!2s!4v1765177554892!5m2!1sen!2s"
