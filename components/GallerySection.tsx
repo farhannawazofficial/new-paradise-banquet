@@ -11,16 +11,16 @@ export default function GallerySection() {
   const [canScrollRight, setCanScrollRight] = useState(true);
 
   const images = [
-    'https://images.unsplash.com/photo-1504198453319-5ce911bafcde?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=1',
-    'https://images.unsplash.com/photo-1505577058444-a3dabf2b1d1d?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=2',
-    'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=3',
-    'https://images.unsplash.com/photo-1481833761820-0509d3217039?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=4',
-    'https://images.unsplash.com/photo-1505692794401-55a9f2f1d9d6?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=5',
-    'https://images.unsplash.com/photo-1445019980597-93fa8acb246c?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=6',
-    'https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=7',
-    'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=8',
-    'https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=9',
-    'https://images.unsplash.com/photo-1542317854-40541f5e5a39?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=10',
+    'https://cdn.i-scmp.com/sites/default/files/images/methode/2017/11/27/c22bfbe6-caa8-11e7-9743-ef57fdb29dbc_image_hires_124343.JPG',
+    'https://www.wedding-spot.com/blog/sites/wsblog/files/images/migrated/152-beautiful%2Bwedding%2Bhall%2Bwith%2Bwhite%2Btablecloths%2Band%2Bflower%2Bcenterpieces.jpg',
+    'https://www.wedaways.com/wp-content/uploads/2024/02/1-199.jpg',
+    'https://www.geo.tv/assets/uploads/updates/2020-03-15/277405_5292960_updates.jpg',
+    'https://www.shutterstock.com/shutterstock/videos/1026066308/thumb/1.jpg?ip=x480',
+    'https://images.pond5.com/inside-large-wedding-banquet-hall-footage-165867884_iconl.jpeg',
+    'https://www.columbusweddingflowers.com/wp-content/uploads/sites/4/2023/05/Floor-to-Ceiling-6-scaled.jpg',
+    'https://i.ytimg.com/vi/soBDrsmwS3w/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCdTbtDzt9IEGboD0jZ1lm0gb7E7w',
+    'https://i.ytimg.com/vi/fB6ZDZnjUcI/maxresdefault.jpg',
+    'https://i.vimeocdn.com/video/2064653264-a6a2113b34e96e80f7c354f442d255ed6d32280d7020db7024a959b148cfb1d4-d?f=webp',
   ];
 
   useEffect(() => {
