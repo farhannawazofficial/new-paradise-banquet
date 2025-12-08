@@ -9,6 +9,15 @@ export default function StickyWhatsApp() {
 
   return (
     <div aria-hidden={false} className="">
+      {/* Scroll to top arrow above WhatsApp */}
+      <button
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        aria-label="Scroll to top"
+        className="scroll-top-btn fixed bottom-20 right-4 z-50 flex items-center justify-center rounded-md bg-yellow-500 text-black shadow-md p-2 md:p-3 hover:translate-y-[-3px] transition-transform duration-200"
+      >
+        <i className="fas fa-chevron-up"></i>
+      </button>
+
       <a
         href={href}
         target="_blank"
