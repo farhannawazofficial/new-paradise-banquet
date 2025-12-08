@@ -51,10 +51,10 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-3">
-            <Link href="#" aria-label="Facebook" className="w-9 h-9 rounded-full bg-yellow-500/10 flex items-center justify-center hover:bg-yellow-500/20 transition text-yellow-300">
+            <Link href="https://www.facebook.com/newparadisebanquet" aria-label="Facebook" className="w-9 h-9 rounded-full bg-yellow-500/10 flex items-center justify-center hover:bg-yellow-500/20 transition text-yellow-300">
               <i className="fab fa-facebook-f"></i>
             </Link>
-            <Link href="#" aria-label="TikTok" className="w-9 h-9 rounded-full bg-yellow-500/10 flex items-center justify-center hover:bg-yellow-500/20 transition text-yellow-300">
+            <Link href="https://www.tiktok.com/@paradisebanquetofficial" aria-label="TikTok" className="w-9 h-9 rounded-full bg-yellow-500/10 flex items-center justify-center hover:bg-yellow-500/20 transition text-yellow-300">
               <i className="fab fa-tiktok"></i>
             </Link>
             <Link href="#" aria-label="Instagram" className="w-9 h-9 rounded-full bg-yellow-500/10 flex items-center justify-center hover:bg-yellow-500/20 transition text-yellow-300">
@@ -64,7 +64,7 @@ export default function Footer() {
         </div>
 
         {/* Small map in the footer corner - visible on desktop only */}
-        <div className="absolute right-6 top-20 w-60 h-48 overflow-hidden rounded-lg shadow-lg hidden md:block animate-fadeIn">
+        <div className="absolute right-6 top-20 w-85 h-75 overflow-hidden rounded-lg shadow-lg hidden md:block animate-fadeIn">
           <iframe
             title="New Paradise Banquet location"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.2194875916935!2d66.96933179999999!3d24.9245917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb315004869d05b%3A0x578e0fe01af47a73!2sNew%20Paradise%20Banquet!5e0!3m2!1sen!2s!4v1765177554892!5m2!1sen!2s"
