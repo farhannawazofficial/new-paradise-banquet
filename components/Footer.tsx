@@ -32,7 +32,7 @@ export default function Footer() {
         <div className="flex flex-col items-center justify-center gap-6">
           {/* Logo image centered - replace with your saved logo in public/images */}
           <div className="relative w-48 h-20 md:w-56 md:h-24 animate-fadeIn">
-            <img src="/images/logo.png" alt="New Paradise Banquet logo" className="object-contain w-full h-full" />
+            <img src="/images/new paradise banquet.png" alt="New Paradise Banquet logo" className="object-contain w-full h-full" />
           </div>
 
           <div className="text-center">

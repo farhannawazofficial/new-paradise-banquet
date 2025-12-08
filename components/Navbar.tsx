@@ -34,7 +34,7 @@ export default function Navbar() {
         {/* Logo */}
         <div className="flex items-center flex-shrink-0">
           <button onClick={() => scrollToId('hero')} aria-label="Go to home">
-            <img src="/images/logo.png" alt="New Paradise logo" className="h-14 md:h-16 w-auto" />
+            <img src="/images/new paradise banquet.png" alt="New Paradise logo" className="h-14 md:h-16 w-auto" />
           </button>
         </div>
 
