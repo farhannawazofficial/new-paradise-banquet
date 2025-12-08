@@ -9,8 +9,26 @@ export default function HeroSection() {
     setVideoLoaded(true);
   }, []);
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  const icons = [
+    { icon: 'fas fa-home', label: 'Book Hall', id: 'services' },
+    { icon: 'fas fa-camera', label: 'Photographer', id: 'services' },
+    { icon: 'fas fa-video', label: 'Videographer', id: 'services' },
+    { icon: 'fas fa-utensils', label: 'Catering', id: 'services' },
+    { icon: 'fas fa-palette', label: 'Decor', id: 'services' },
+    { icon: 'fas fa-ring', label: 'Wedding Cards', id: 'services' },
+    { icon: 'fas fa-music', label: 'Music/DJ', id: 'services' },
+    { icon: 'fas fa-makeup', label: 'Makeup Artist', id: 'services' },
+  ];
+
   return (
-    <section className="relative w-full h-screen overflow-hidden">
+    <section className="relative w-full min-h-screen overflow-hidden flex flex-col">
       {/* Video Background */}
       <video
         autoPlay
@@ -30,7 +48,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-black/50"></div>
 
       {/* Content */}
-      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 md:px-8">
+      <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-4 md:px-8">
         {/* Main Title with Animation */}
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-yellow-400 mb-6 animate-fadeInDown tracking-wider">
           PLAN YOUR EVENT!
@@ -42,24 +60,41 @@ export default function HeroSection() {
         </p>
 
         {/* Description with Animation */}
-        <p className="text-sm md:text-lg text-gray-200 max-w-3xl mb-12 leading-relaxed animate-fadeInUp animation-delay-200">
+        <p className="text-sm md:text-lg text-gray-200 max-w-3xl mb-16 leading-relaxed animate-fadeInUp animation-delay-200">
           Plan your event whether it's a wedding or a party, with Bellagio Venue. Being the leading wedding
           planner in Pakistan we give you access to the best event venues, wedding halls, mehndi artists,
           catering services, and many others.
         </p>
+      </div>
 
-        {/* Search/CTA Section */}
-        <div className="w-full max-w-2xl animate-fadeInUp animation-delay-400">
-          <div className="flex flex-col md:flex-row gap-4 items-center justify-center">
-            <input
-              type="text"
-              placeholder="Search by location"
-              className="w-full md:w-64 px-4 py-3 bg-black/70 text-white placeholder-gray-400 rounded-lg border border-yellow-400/30 focus:outline-none focus:border-yellow-400 transition-all duration-300"
-            />
-            <button className="w-full md:w-auto px-8 py-3 bg-yellow-500 hover:bg-yellow-400 text-black font-bold rounded-lg transition-all duration-300 transform hover:scale-105">
-              <i className="fas fa-search mr-2"></i>
-              Search
-            </button>
+      {/* Icons Section - Bottom of Hero */}
+      <div className="relative z-10 bg-black/40 backdrop-blur-sm border-t border-yellow-400/30 py-8 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
+            {icons.map((item, index) => (
+              <button
+                key={index}
+                onClick={() => scrollToSection(item.id)}
+                className="group flex flex-col items-center justify-center transition-all duration-500 hover:scale-110 cursor-pointer"
+                style={{
+                  animation: `fadeInUp 0.7s ease-out forwards`,
+                  animationDelay: `${300 + index * 50}ms`,
+                }}
+              >
+                {/* Icon */}
+                <div className="text-4xl md:text-5xl text-yellow-400 mb-2 transition-all duration-500 group-hover:text-yellow-300 group-hover:scale-125">
+                  <i className={item.icon}></i>
+                </div>
+
+                {/* Label */}
+                <p className="text-xs md:text-sm text-white text-center font-medium group-hover:text-yellow-400 transition-colors duration-300">
+                  {item.label}
+                </p>
+
+                {/* Hover Effect Line */}
+                <div className="mt-2 w-6 h-0.5 bg-yellow-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 rounded-full"></div>
+              </button>
+            ))}
           </div>
         </div>
       </div>

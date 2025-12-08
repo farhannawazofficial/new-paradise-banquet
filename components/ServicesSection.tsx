@@ -52,6 +52,7 @@ export default function ServicesSection() {
 
   return (
     <section
+      id="services"
       ref={ref}
       className="bg-black py-16 md:py-24 px-4 md:px-8"
     >
