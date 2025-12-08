@@ -203,5 +203,39 @@ html {
 .gallery-btn.right { right: 6px; }
 .gallery-btn:hover { transform: translateY(-50%) scale(1.04); background: #fff7ed; color: #b45309; }
 
+/* Testimonials styles */
+.testimonials-container {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 8px 6px;
+  -webkit-overflow-scrolling: touch;
+}
+.testimonial-card {
+  flex: 0 0 85%;
+  max-width: 900px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+@media (min-width: 768px) {
+  .testimonial-card { flex: 0 0 45%; }
+}
+
+.testimonial-dot {
+  width: 36px;
+  height: 8px;
+  background: rgba(196, 196, 196, 0.4);
+  border-radius: 8px;
+  display: inline-block;
+  transition: all .24s ease;
+  border: none;
+}
+.testimonial-dot.active { width: 48px; background: #b91c1c; }
+
 
 
