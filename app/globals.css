@@ -211,7 +211,12 @@ html {
   scroll-behavior: smooth;
   padding: 8px 6px;
   -webkit-overflow-scrolling: touch;
+  /* hide native scrollbar */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
+.testimonials-container::-webkit-scrollbar { display: none; height: 0; }
+
 .testimonial-card {
   flex: 0 0 85%;
   max-width: 900px;
@@ -229,13 +234,13 @@ html {
 .testimonial-dot {
   width: 36px;
   height: 8px;
-  background: rgba(196, 196, 196, 0.4);
+  background: rgba(245, 159, 11, 0.18); /* pale yellow */
   border-radius: 8px;
   display: inline-block;
   transition: all .24s ease;
   border: none;
 }
-.testimonial-dot.active { width: 48px; background: #b91c1c; }
+.testimonial-dot.active { width: 48px; background: #f59e0b; }
 
 
 
