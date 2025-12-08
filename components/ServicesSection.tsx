@@ -1,112 +1,98 @@
+
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
 
 export default function ServicesSection() {
   const [inView, setInView] = useState(false);
-  const ref = useRef(null);
+  const ref = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(true);
-        }
+        if (entry.isIntersecting) setInView(true);
       },
-      { threshold: 0.1 }
+      { threshold: 0.12 }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
+    if (ref.current) observer.observe(ref.current);
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
+      if (ref.current) observer.unobserve(ref.current);
     };
   }, []);
 
-  const services = [
+  const packages = [
     {
-      icon: 'fas fa-home',
-      title: 'Book Hall',
-      description: 'Premium wedding halls and banquet venues',
+      name: 'Basic',
+      price: 'PKR 200,000',
+      tag: 'Venue Only',
+      features: ['Hall booking (4 hrs)', 'Basic seating', 'On-site coordinator'],
+      highlight: false,
     },
     {
-      icon: 'fas fa-camera',
-      title: 'Photographer',
-      description: 'Professional photography services',
+      name: 'Standard',
+      price: 'PKR 250,000',
+      tag: 'Most Popular',
+      features: ['Hall booking (6 hrs)', 'Full catering (2 menus)', 'Photography (4 hrs)', 'Basic decor', 'On-site coordinator'],
+      highlight: true,
     },
     {
-      icon: 'fas fa-utensils',
-      title: 'Catering',
-      description: 'Delicious catering for your event',
-    },
-    {
-      icon: 'fas fa-palette',
-      title: 'Decor',
-      description: 'Beautiful decoration services',
+      name: 'Premium',
+      price: 'PKR 400,000',
+      tag: 'All Inclusive',
+      features: ['Hall booking (full day)', 'Premium catering', 'Photography & videography', 'Premium decor', 'VIP service & transport help'],
+      highlight: false,
     },
   ];
 
   return (
-    <section
-      id="services"
-      ref={ref}
-      className="bg-black py-16 md:py-24 px-4 md:px-8"
-    >
+    <section id="services" ref={ref} className="bg-black text-white py-16 md:py-28 px-4 md:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Section Title */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-yellow-400 mb-4">
-            Our Services
-          </h2>
-          <p className="text-gray-300 text-lg">
-            Everything you need for a perfect event
-          </p>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-yellow-400">Wedding Packages</h2>
+          <p className="text-gray-300 mt-3">Choose a package that fits your celebration — customizable later.</p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-stretch">
+          {packages.map((pkg, idx) => (
             <div
-              key={index}
-              className={`group relative bg-gradient-to-br from-yellow-500/10 to-yellow-500/5 border border-yellow-500/30 rounded-lg p-8 text-center hover:border-yellow-400 transition-all duration-500 transform hover:scale-105 ${
-                inView
-                  ? `opacity-100 translate-y-0 animate-fadeInUp`
-                  : 'opacity-0 translate-y-8'
-              }`}
-              style={{
-                animationDelay: `${index * 100}ms`,
-              }}
+              key={pkg.name}
+              className={`relative rounded-xl p-6 md:p-8 text-center transition-transform duration-500 ease-out ${
+                pkg.highlight ? 'ring-2 ring-yellow-400 shadow-2xl scale-105 bg-gradient-to-br from-yellow-600/5 to-yellow-500/5' : 'bg-gray-900/40'
+              } ${inView ? 'opacity-100 translate-y-0 animate-fadeInUp' : 'opacity-0 translate-y-8'}`}
+              style={{ animationDelay: `${idx * 120}ms` }}
             >
-              {/* Icon */}
-              <div className="text-5xl text-yellow-400 mb-4 transition-transform duration-500 group-hover:scale-110">
-                <i className={service.icon}></i>
-              </div>
+              {pkg.highlight && (
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-semibold">{pkg.tag}</div>
+              )}
 
-              {/* Title */}
-              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-yellow-400 transition-colors duration-300">
-                {service.title}
-              </h3>
+              <div className="text-yellow-400 text-3xl font-extrabold mb-3">{pkg.name}</div>
+              <div className="text-2xl md:text-3xl font-bold text-white mb-4">{pkg.price}</div>
 
-              {/* Description */}
-              <p className="text-gray-300 text-sm leading-relaxed">
-                {service.description}
-              </p>
+              <ul className="text-left text-gray-300 mb-6 space-y-2">
+                {pkg.features.map((f, i) => (
+                  <li key={i} className="flex items-center gap-3">
+                    <span className="w-7 h-7 flex items-center justify-center rounded bg-yellow-500 text-black"><i className="fas fa-check"></i></span>
+                    <span className="text-sm">{f}</span>
+                  </li>
+                ))}
+              </ul>
 
-              {/* Hover Effect Bar */}
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-500 to-yellow-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 rounded-b-lg"></div>
+              <a
+                href={`https://wa.me/923191113372?text=${encodeURIComponent(`Assalamualaikum, I am interested in the ${pkg.name} package at New Paradise Banquet`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`inline-block w-full md:w-auto px-6 py-3 rounded-lg font-semibold ${pkg.highlight ? 'bg-yellow-400 text-black hover:bg-yellow-500' : 'bg-transparent border border-yellow-400 text-yellow-400 hover:bg-yellow-500/10'}`}
+                aria-label={`Book ${pkg.name} via WhatsApp`}
+              >
+                Book Now
+              </a>
             </div>
           ))}
         </div>
 
-        {/* More Services Text */}
-        <div className="mt-16 text-center">
-          <p className="text-gray-400 text-lg">
-            <span className="text-yellow-400 font-semibold">More services</span> available in your area. Contact us for details!
-          </p>
+        <div className="mt-10 text-center text-gray-400">
+          <p className="max-w-2xl mx-auto">Prices are starting packages — customizations available. Contact us for tailored wedding packages, add-ons, and availability.</p>
         </div>
       </div>
     </section>
