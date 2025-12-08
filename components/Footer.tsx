@@ -43,7 +43,7 @@ export default function Footer() {
 
         <div className="mt-8 border-t border-white/6 pt-6 text-sm text-center text-white/70">
           <div>Copyright-2024. All Right Reserved New Paradise Banquet.</div>
-          <div>Powered by <span className="font-semibold text-yellow-400">Xanfar Tech</span></div>
+          <div>Powered by <span className="font-semibold text-yellow-400">xanfartech.com</span></div>
         </div>
       </div>
     </footer>
