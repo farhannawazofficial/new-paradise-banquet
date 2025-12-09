@@ -39,7 +39,9 @@ export default function Footer() {
             <p className="font-semibold text-lg text-yellow-400">Call Us</p>
             <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-6 mt-2 text-white/90">
               <a href="tel:+923191113372" className="hover:underline flex items-center gap-2">
-                <i className="fas fa-phone text-yellow-400"></i>
+                <i className="fas fa-phone text-yellow-400">
+                  
+                </i>
                 <span>+92 319 1113372</span>
               </a>
               <a href="tel:+923360222235" className="hover:underline flex items-center gap-2">
