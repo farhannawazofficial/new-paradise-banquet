@@ -9,6 +9,8 @@ export default function GallerySection() {
   const scrollLeftStart = useRef(0);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxImage, setLightboxImage] = useState<string | null>(null);
 
   const images = [
     'https://cdn.i-scmp.com/sites/default/files/images/methode/2017/11/27/c22bfbe6-caa8-11e7-9743-ef57fdb29dbc_image_hires_124343.JPG',
@@ -36,6 +38,27 @@ export default function GallerySection() {
     onScroll();
     return () => el.removeEventListener('scroll', onScroll);
   }, []);
+
+  // Handle Escape key to close lightbox
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && lightboxOpen) {
+        setLightboxOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [lightboxOpen]);
+
+  const openLightbox = (src: string) => {
+    setLightboxImage(src);
+    setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+    setTimeout(() => setLightboxImage(null), 300); // wait for animation to finish
+  };
 
   function scrollBy(amount: number) {
     const el = containerRef.current;
@@ -92,7 +115,13 @@ export default function GallerySection() {
           >
             {images.map((src, idx) => (
               <div key={idx} className="gallery-item">
-                <img src={src} alt={`Gallery ${idx + 1}`} className="w-full h-full object-cover rounded-lg" />
+                <button
+                  onClick={() => openLightbox(src)}
+                  className="w-full h-full rounded-lg overflow-hidden hover:opacity-80 transition-opacity duration-300 cursor-pointer"
+                  aria-label={`View gallery image ${idx + 1}`}
+                >
+                  <img src={src} alt={`Gallery ${idx + 1}`} className="w-full h-full object-cover" />
+                </button>
               </div>
             ))}
           </div>
@@ -107,6 +136,47 @@ export default function GallerySection() {
           </button>
         </div>
       </div>
+
+      {/* Lightbox Modal */}
+      {lightboxImage && (
+        <div
+          className={`fixed inset-0 z-50 flex items-center justify-center transition-opacity duration-300 ${
+            lightboxOpen ? 'opacity-100 bg-black/80' : 'opacity-0 bg-black/0 pointer-events-none'
+          }`}
+          onClick={closeLightbox}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Image lightbox"
+        >
+          {/* Close Button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              closeLightbox();
+            }}
+            className={`absolute top-6 right-6 z-50 w-12 h-12 flex items-center justify-center rounded-full bg-white text-black text-2xl font-bold hover:bg-yellow-400 transition-all duration-300 transform ${
+              lightboxOpen ? 'scale-100 opacity-100' : 'scale-75 opacity-0'
+            }`}
+            aria-label="Close lightbox"
+          >
+            ✕
+          </button>
+
+          {/* Image Container */}
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className={`max-w-4xl max-h-[90vh] flex items-center justify-center transition-all duration-300 transform ${
+              lightboxOpen ? 'scale-100 opacity-100' : 'scale-75 opacity-0'
+            }`}
+          >
+            <img
+              src={lightboxImage}
+              alt="Fullscreen gallery image"
+              className="w-full h-full object-contain rounded-lg shadow-2xl"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }
