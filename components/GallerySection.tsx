@@ -98,7 +98,7 @@ export default function GallerySection() {
         <div className="relative">
           <button
             aria-hidden={!canScrollLeft}
-            onClick={() => scrollBy(-600)}
+            onClick={() => scrollBy(-300)}
             className={`gallery-btn left ${canScrollLeft ? '' : 'opacity-30 pointer-events-none'}`}
             aria-label="Scroll left"
           >
@@ -128,7 +128,7 @@ export default function GallerySection() {
 
           <button
             aria-hidden={!canScrollRight}
-            onClick={() => scrollBy(600)}
+            onClick={() => scrollBy(300)}
             className={`gallery-btn right ${canScrollRight ? '' : 'opacity-30 pointer-events-none'}`}
             aria-label="Scroll right"
           >
@@ -148,14 +148,14 @@ export default function GallerySection() {
           aria-modal="true"
           aria-label="Image lightbox"
         >
-          {/* Close Button */}
+          {/* Close Button - Top Right Corner */}
           <button
             onClick={(e) => {
               e.stopPropagation();
               closeLightbox();
             }}
-            className={`absolute top-6 right-6 z-50 w-12 h-12 flex items-center justify-center rounded-full bg-white text-black text-2xl font-bold hover:bg-yellow-400 transition-all duration-300 transform ${
-              lightboxOpen ? 'scale-100 opacity-100' : 'scale-75 opacity-0'
+            className={`fixed top-8 right-8 z-50 w-14 h-14 flex items-center justify-center rounded-full bg-white text-black text-3xl font-bold hover:bg-yellow-400 transition-all duration-300 transform shadow-lg ${
+              lightboxOpen ? 'scale-100 opacity-100' : 'scale-75 opacity-0 pointer-events-none'
             }`}
             aria-label="Close lightbox"
           >
