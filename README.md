@@ -114,7 +114,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 **Farhan Nawaz**
 
 * **GitHub:** [@farhannawazofficial](https://github.com/farhannawazofficial)
-* **Email:** [farhannawazofficial@gmail.com]
-* **LinkedIn:** [https://www.linkedin.com/in/farhannawaz-dev/]
+* **Email:** farhannawazofficial@gmail.com
+* **LinkedIn:** https://www.linkedin.com/in/farhannawaz-dev/
 
 Project Link: [https://github.com/farhannawazofficial/new-paradise-banquet](https://github.com/farhannawazofficial/new-paradise-banquet)
