@@ -26,7 +26,7 @@
 
 The goal of this repository is to provide a seamless user experience (UX) for visitors looking for event venues for weddings, parties, and corporate functions.
 
-**Live Demo:** [Insert Link to Live Website Here]
+**Live Demo:** [[Insert Link to Live Website Here](https://new-paradise-banquet.vercel.app/)]
 
 ---
 
@@ -45,11 +45,9 @@ The goal of this repository is to provide a seamless user experience (UX) for vi
 
 This project leverages the following technologies:
 
-* **Frontend:** HTML5, CSS3, JavaScript (or Next.js / Vue.js - *Edit this*)
-* **Styling:** Bootstrap / Tailwind CSS / Custom CSS (*Edit this*)
-* **Backend:** Node.js / PHP / Python (*Edit if applicable*)
-* **Database:** MongoDB / MySQL (*Edit if applicable*)
-* **Hosting:** GitHub Pages / Vercel / Netlify
+* **Frontend:** HTML5, CSS3, JavaScript , Next.js 
+* **Styling:** Bootstrap / Tailwind CSS / Custom CSS
+* **Hosting:** GitHub Pages & Vercel 
 
 ---
 
