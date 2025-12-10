@@ -55,7 +55,9 @@ This project leverages the following technologies:
 
 ## 📸 Project Video 
 
-| ![Complete Project Video ](https://www.linkedin.com/feed/update/urn:li:activity:7404048902712274944/) | 
+| ![Complete Project Video ]
+##Link
+https://www.linkedin.com/feed/update/urn:li:activity:7404048902712274944/
 
 ---
 
