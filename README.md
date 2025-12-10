@@ -12,7 +12,7 @@
 - [📍 Overview](#-overview)
 - [✨ Key Features](#-key-features)
 - [🚀 Technologies Used](#-technologies-used)
-- [📸 Screenshots](#-screenshots)
+- [📸 Project Video ](#-project-video)
 - [🔧 Getting Started](#-getting-started)
 - [💻 Installation](#-installation)
 - [🤝 Contributing](#-contributing)
@@ -53,11 +53,11 @@ This project leverages the following technologies:
 
 ---
 
-## 📸 Screenshots
+## 📸 Project Video 
 
-| Home Page | Gallery Section |
+
 |:---:|:---:|
-| ![Home Page](path/to/image1.png) | ![Gallery](path/to/image2.png) |
+| ![Complete Project Video ](path/to/[image1.png](https://www.linkedin.com/feed/update/urn:li:activity:7404048902712274944/)) | 
 
 ---
 
